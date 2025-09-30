@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import P1 from '../../../../../src/assets/images/p1.png'
 import P2 from '../../../../../src/assets/images/p2.png'
@@ -9,14 +9,16 @@ import P6 from '../../../../../src/assets/images/p6.png'
 import P7 from '../../../../../src/assets/images/p7.png'
 import P8 from '../../../../../src/assets/images/p8.png'
 import VarifiedIcon from '../../../../../src/assets/images/veriy-icon.png'
+import { MobileScreenConext } from "../../../../context/MobileScreenContext";
 function SecondFooter() {
+    const isMobile = useContext(MobileScreenConext);
     return (
         <>
             <Box sx={{ backgroundColor: "#fff" }} className="second-footer" p={"20px 0"}>
                 <div className='container'>
 
-                    <Stack direction="row" alignItems={"start"} gap={"30px"}>
-                        <Stack className='payment-methods-icons' width={"26%"}>
+                    <Stack direction={isMobile ? "column": "row"} alignItems={"start"} gap={"30px"}>
+                        <Stack className='payment-methods-icons' width={isMobile ? "100%": "26%"}>
                             <Typography variant='h3'>
                                 Payment Methods
                             </Typography>

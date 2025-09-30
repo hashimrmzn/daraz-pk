@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from "react";
 import { Typography, Stack } from "@mui/material";
+import { MobileScreenConext } from "../../../../../context/MobileScreenContext";
 function SecCol() {
+    const isMobile = useContext(MobileScreenConext);
     return (
         <>
-            <Stack sx={{ paddingRight: "25%" }}>
+            <Stack sx={{ paddingRight: isMobile ? "0": "25%" }}>
 
                 <p><b>Shop from Verified Vendors
                 </b></p>

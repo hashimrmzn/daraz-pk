@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useContext } from "react";
 import { Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Footerlogo from '../../../../../../src/assets/images/footer-logo.png'
 import FappStore from '../../../../../../src/assets/images/f-app-store.png'
 import FappGallery from '../../../../../../src/assets/images/f-app-gallery.png'
 import FGooglePlay from '../../../../../../src/assets/images/f-google-play.png'
+import { MobileScreenConext } from "../../../../../context/MobileScreenContext";
 function FooterDownloadApp() {
+      const isMobile = useContext(MobileScreenConext);
     return (
         <>
-            <Stack direction="row" alignItems={"start"} justifyContent={"space-between"} gap={"30px"}>
-                <Stack direction="row" alignItems={"start"}>
+            <Stack  margin={isMobile ? "20px 0":0} direction={isMobile ? "column" : "row"}alignItems={"start"} justifyContent={"space-between"} gap={"30px"}>
+                <Stack direction="row" alignItems={"start"} >
                     <div>
                         <img src={Footerlogo} style={{ height: "40px", width: "40px" }} />
                     </div>

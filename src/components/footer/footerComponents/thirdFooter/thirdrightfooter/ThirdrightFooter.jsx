@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import { Box, Typography, Stack, Grid } from "@mui/material";
+import { MobileScreenConext } from "../../../../../context/MobileScreenContext";
 
 function ThirdrightFooter() {
+  const isMobile = useContext(MobileScreenConext);
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -41,20 +43,21 @@ function ThirdrightFooter() {
   if (loading) return <Typography>Loading...</Typography>;
 
   return (
-    <Box sx={{ width: "50%" }}>
+   <Box sx={{ width: isMobile ? "100%" : "50%" }}>
       <div className="container">
         <Typography variant="h2" gutterBottom>
           Top Categories & Brands
         </Typography>
 
-        <Grid container columns={12}>
+        <Grid container columns={12} >
           {categories.map((category) => (
             <Grid item xs={12} sm={6} size={6} key={category.slug}>
               <Stack className="all-categories-items">
                 <Typography variant="h6">{category.name}</Typography>
 
                 <Stack
-                pr={"20%"}
+                pr={isMobile ? 0 :"20%"}
+                
                   direction="row"
                   flexWrap="wrap"
                   className="all-categories-items"

@@ -47,3 +47,14 @@ a{
 :global(.slick-dots li){
   margin: 0;
 }
+
+
+
+@media (max-width: 767px) {
+  :global(.slick-slide img) {
+    display: block;
+    height: 150px;
+    object-fit: cover;
+    object-position: left;
+  }
+}

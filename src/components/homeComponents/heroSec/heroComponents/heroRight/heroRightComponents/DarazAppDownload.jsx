@@ -1,10 +1,11 @@
 import { Stack } from '@mui/material'
+import React from "react";
 import qr from "../../../../../../assets/images/qr.avif"
 import appstore from "../../../../../../assets/images/app-store.png";
 import googlestore from "../../../../../../assets/images/google-store.png";
-import React from 'react'
 
 function DarazAppDownload() {
+     
     return (
         <>
             <Stack

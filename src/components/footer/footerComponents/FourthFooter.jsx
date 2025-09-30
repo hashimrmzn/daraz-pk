@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from "react";
 import { Box, Typography, Stack } from "@mui/material";
 import Pak from '../../../../src/assets/images/pak.png'
 import Bangal from '../../../../src/assets/images/bangal.png'
@@ -10,13 +10,15 @@ import Twitter from '../../../../src/assets/images/twitter.png'
 import Insta from '../../../../src/assets/images/insta.png'
 import Yt from '../../../../src/assets/images/yt.png'
 import W from '../../../../src/assets/images/w.png'
+import { MobileScreenConext } from "../../../context/MobileScreenContext";
 function FourthFooter() {
+    const isMobile = useContext(MobileScreenConext);
     return (
         <>
             <Box sx={{ backgroundColor: "#fff" }} p={"40px 0"}>
                 <div className='container'>
-                    <Stack direction="row" alignItems={"start"} justifyContent={"space-between"}>
-                        <Stack width={"40%"}>
+                    <Stack direction={isMobile ? "column" : "row"} alignItems={"start"} justifyContent={"space-between"} gap={"20px"}>
+                        <Stack width={isMobile ?"100%" :"40%"}>
                             <Typography variant='h4' sx={{ color: "#2a2a2a", fontWeight: "300", fontSize: "16px !important", mb: "10px" }}>
                                 Daraz International
                             </Typography>
@@ -60,11 +62,11 @@ function FourthFooter() {
                             </Stack>
                         </Stack>
 
-                        <Stack width={"20%"}>
+                        <Stack width={isMobile ?"100%" :"20%"}>
                             <Typography variant='h4' sx={{ color: "#2a2a2a", fontWeight: "300", fontSize: "16px !important", mb: "10px" }}>
                                Follow Us
                             </Typography>
-                            <Stack direction="row" alignItems={"start"} justifyContent={"space-between"} flexWrap={"wrap"} className='footer-all-countries'>
+                            <Stack direction="row" gap={"20px"} alignItems={"start"} justifyContent={isMobile ?"start" :"space-between"} flexWrap={"wrap"} className='footer-all-countries'>
                                 <div>
                                     <a href='#.'>
                                         <img src={Fb} alt='facebook'/>

@@ -13,7 +13,7 @@ function BottomHeader() {
                 <Stack sx={{
                     display: "flex",
                     width: "100%",
-                    flexDirection: "row",
+                     flexDirection: { xs: "column", sm: "row" }, 
                     alignItems: "center"
                 }}>
                     <Logo />
